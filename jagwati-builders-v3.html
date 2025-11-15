@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jagwati Devi Builders - Premier Construction & Real Estate Services in South Delhi">
+    <title>Jagwati Devi Builders | Construction Excellence Since 2019</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D4A574;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --accent: #8B6F47;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* FONT FAMILIES */
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .animate-zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        /* AUTO-LOOP CAROUSEL */
+        .carousel-auto {
+            display: flex;
+            gap: 2rem;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .carousel-auto-track {
+            display: flex;
+            gap: 2rem;
+            animation: slideLeft linear infinite;
+            width: fit-content;
+        }
+
+        .carousel-auto-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-item-auto {
+            flex-shrink: 0;
+            min-width: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .carousel-item-auto::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3));
+        }
+
+        .carousel-item-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item-auto {
+                min-width: 280px;
+            }
+        }
+
+        /* BACKGROUND IMAGES */
+        .bg-hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23D4A574" stroke-width="0.5"/></pattern></defs><rect width="1200" height="600" fill="%231a1a1a"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .bg-service {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(139, 111, 71, 0.1));
+            position: relative;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* PAGE TRANSITIONS */
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* STAGGER ANIMATIONS */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+
+        /* GRADIENT TEXT */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* SUBTLE STATS */
+        .subtle-stat {
+            background: white/10;
+            backdrop-filter: blur(10px);
+            border: 1px solid white/20;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .subtle-stat-number {
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .subtle-stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            position: fixed;
+            left: -100%;
+            top: 70px;
+            flex-direction: column;
+            background-color: #1a1a1a;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            padding: 2rem 0;
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- NAVIGATION -->
+    <nav class="flex justify-between items-center bg-dark text-white">
+        <div class="nav-brand pl-4">Jagwati Devi</div>
+        
+        <div class="hidden md:flex gap-8 items-center pr-4">
+            <a href="#" onclick="navigateTo('home')" class="nav-link">Home</a>
+            <a href="#" onclick="navigateTo('services')" class="nav-link">Services</a>
+            <a href="#" onclick="navigateTo('contact')" class="nav-link">Contact</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-white text-2xl pr-4">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="#" onclick="navigateTo('home'); document.getElementById('mobile-menu').classList.remove('active')" class="nav-link py-2">Home</a>
+        <a href="#" onclick="navigateTo('services'); document.getElementById('mobile-menu').classList.remove('active')" class="nav-link py-2">Services</a>
+        <a href="#" onclick="navigateTo('contact'); document.getElementById('mobile-menu').classList.remove('active')" class="nav-link py-2">Contact</a>
+    </div>
+
+    <!-- PAGE: HOME -->
+    <div id="home" class="page active">
+        <!-- HERO SECTION -->
+        <section class="pt-32 pb-20 px-4 md:px-8 bg-hero min-h-screen flex items-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div class="absolute top-10 left-10 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+                <div class="absolute top-40 right-10 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 2s"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10 w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-in-left">
+                        <h1 class="font-display text-5xl md:text-7xl font-900 text-white mb-6 leading-tight">
+                            Building Dreams, <span class="text-gradient">Crafting Futures</span>
+                        </h1>
+                        <p class="font-heading text-xl text-gray-300 mb-8 leading-relaxed">
+                            Premier construction & real estate services in South Delhi. Quality workmanship, timely execution, local expertise.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                            <button onclick="navigateTo('contact')" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-heading font-bold transition transform hover:scale-105">
+                                Get Started
+                            </button>
+                            <button onclick="navigateTo('services')" class="border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-4 rounded-lg font-heading font-bold transition">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="flex gap-6 flex-wrap">
+                            <div class="subtle-stat">
+                                <div class="subtle-stat-number">275+</div>
+                                <div class="subtle-stat-label">Skilled Employees</div>
+                            </div>
+                            <div class="subtle-stat">
+                                <div class="subtle-stat-number">₹125Cr+</div>
+                                <div class="subtle-stat-label">Annual Turnover</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <p class="text-amber-600 font-heading font-bold mb-3">CALL US TODAY</p>
+                            <p class="text-3xl text-white font-display font-900">+91 81306 99102</p>
+                        </div>
+                    </div>
+
+                    <div class="animate-slide-in-right">
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 animate-float overflow-hidden">
+                            <div class="text-6xl mb-4">🏗️</div>
+                            <h3 class="font-heading text-2xl font-bold text-white mb-4">Building Excellence Since 2019</h3>
+                            <p class="text-gray-300 mb-6">Delivering world-class residential and commercial construction services across Tughlakabad and South Delhi with cutting-edge technology and premium materials.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-amber-600"></i>
+                                    <span>98% Quality Assurance Rating</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-amber-600"></i>
+                                    <span>State-of-the-art Equipment</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-amber-600"></i>
+                                    <span>500+ Successful Projects</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO AUTO-LOOP SLIDER WITH IMAGES -->
+        <section class="py-20 px-4 bg-light">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-5xl font-900 mb-2 text-dark">Featured Projects</h2>
+                <p class="font-heading text-xl text-gray-600 mb-12">Scroll to see our latest completed projects</p>
+
+                <div class="carousel-auto">
+                    <div class="carousel-auto-track" style="animation-duration: 35s;">
+                        <!-- Project 1 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Luxury Residential Complex</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>45 Units</span>
+                                    <span>2023-2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Commercial Space</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>20 Units</span>
+                                    <span>2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Residential Villas</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>15 Units</span>
+                                    <span>2022</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Urban Apartments</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>60 Units</span>
+                                    <span>2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Modern Tech Hub</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>35 Units</span>
+                                    <span>2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DUPLICATE ITEMS FOR SEAMLESS LOOP -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Luxury Residential Complex</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>45 Units</span>
+                                    <span>2023-2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Commercial Space</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>20 Units</span>
+                                    <span>2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Residential Villas</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>15 Units</span>
+                                    <span>2022</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Urban Apartments</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>60 Units</span>
+                                    <span>2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(212, 165, 116, 0.3)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Modern Tech Hub</h3>
+                                <div class="flex justify-between text-sm opacity-90">
+                                    <span>35 Units</span>
+                                    <span>2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section class="py-20 px-4 bg-dark text-white relative" style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="mb-16">
+                    <h2 class="font-display text-5xl font-900 mb-4 text-gradient">About Us</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">
+                        Jagwati Devi Builders (OPC) Pvt. Ltd. is a New Delhi–based construction and real-estate firm founded in 2019. We offer end-to-end residential and small-scale commercial construction services including new builds, renovations, and project management — delivering quality workmanship, timely execution, and local expertise in the Tughlakabad / South Delhi area.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div class="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center animate-fade-in-up stagger-1">
+                        <div class="text-4xl font-display font-900 text-amber-600 mb-2">98%</div>
+                        <p class="text-sm text-gray-300">Quality Assurance</p>
+                    </div>
+                    <div class="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center animate-fade-in-up stagger-2">
+                        <div class="text-4xl font-display font-900 text-amber-600 mb-2">500+</div>
+                        <p class="text-sm text-gray-300">Projects Completed</p>
+                    </div>
+                    <div class="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center animate-fade-in-up stagger-3">
+                        <div class="text-4xl font-display font-900 text-amber-600 mb-2">85%</div>
+                        <p class="text-sm text-gray-300">Modern Equipment</p>
+                    </div>
+                    <div class="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center animate-fade-in-up stagger-4">
+                        <div class="text-4xl font-display font-900 text-amber-600 mb-2">99%</div>
+                        <p class="text-sm text-gray-300">On-time Delivery</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 animate-fade-in-up stagger-1">
+                        <h3 class="font-heading text-2xl font-bold mb-4">Innovation First</h3>
+                        <p class="text-gray-300">We leverage cutting-edge construction technology and sustainable building practices to deliver premium results.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 animate-fade-in-up stagger-2">
+                        <h3 class="font-heading text-2xl font-bold mb-4">Expert Team</h3>
+                        <p class="text-gray-300">Our 275+ skilled employees bring years of experience in residential, commercial, and land development projects.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 animate-fade-in-up stagger-3">
+                        <h3 class="font-heading text-2xl font-bold mb-4">Client Focused</h3>
+                        <p class="text-gray-300">Every project is backed by rigorous quality checks, transparent communication, and unwavering commitment to excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section class="py-20 px-4 bg-light" style="background-image: linear-gradient(rgba(245, 245, 245, 0.95), rgba(245, 245, 245, 0.95)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&fit=crop'); background-size: cover; background-position: center;">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-5xl font-900 mb-12 text-center text-dark">Our Achievements</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center border-b-4 border-amber-600 animate-fade-in-up stagger-1">
+                        <div class="text-6xl font-display font-900 text-amber-600 mb-4">500+</div>
+                        <h3 class="font-heading text-2xl font-bold text-dark mb-2">Units Delivered</h3>
+                        <p class="text-gray-600">Successfully completed residential and commercial projects across South Delhi</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center border-b-4 border-amber-600 animate-fade-in-up stagger-2">
+                        <div class="text-6xl font-display font-900 text-amber-600 mb-4">5+</div>
+                        <h3 class="font-heading text-2xl font-bold text-dark mb-2">Years Excellence</h3>
+                        <p class="text-gray-600">Building trust and delivering quality since 2019 with consistent growth</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center border-b-4 border-amber-600 animate-fade-in-up stagger-3">
+                        <div class="text-6xl font-display font-900 text-amber-600 mb-4">150+</div>
+                        <h3 class="font-heading text-2xl font-bold text-dark mb-2">Happy Clients</h3>
+                        <p class="text-gray-600">Trusted by corporate and individual clients across the region</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: SERVICES -->
+    <div id="services" class="page">
+        <!-- SERVICES HERO -->
+        <section class="pt-32 pb-16 px-4 bg-hero min-h-96 flex items-center" style="background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&fit=crop'); background-size: cover; background-position: center;">
+            <div class="max-w-7xl mx-auto w-full relative z-10">
+                <h1 class="font-display text-5xl md:text-7xl font-900 text-white mb-4 animate-fade-in-up">
+                    Our <span class="text-gradient">Services</span>
+                </h1>
+                <p class="font-heading text-xl text-gray-300 max-w-2xl animate-fade-in-up stagger-1">
+                    Comprehensive construction and real estate solutions tailored to your needs
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICES AUTO-LOOP SLIDER -->
+        <section class="py-20 px-4 bg-light">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-4xl font-900 mb-12 text-center text-dark">What We Offer</h2>
+
+                <div class="carousel-auto">
+                    <div class="carousel-auto-track" style="animation-duration: 38s;">
+                        <!-- Service 1 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Residential Construction</h3>
+                                <p class="text-sm opacity-90">Houses, Villas, Apartments & Flats</p>
+                            </div>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Commercial Development</h3>
+                                <p class="text-sm opacity-90">Shop-cum-Offices & Retail Fit-outs</p>
+                            </div>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Project Management</h3>
+                                <p class="text-sm opacity-90">Supervision & Quality Assurance</p>
+                            </div>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Land Development</h3>
+                                <p class="text-sm opacity-90">Site Preparation & Civil Works</p>
+                            </div>
+                        </div>
+
+                        <!-- Service 5 -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1567269865882-eea321fda8c9?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Renovations & Fit-outs</h3>
+                                <p class="text-sm opacity-90">Space Redesign & Modern Upgrades</p>
+                            </div>
+                        </div>
+
+                        <!-- DUPLICATE ITEMS FOR SEAMLESS LOOP -->
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Residential Construction</h3>
+                                <p class="text-sm opacity-90">Houses, Villas, Apartments & Flats</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Commercial Development</h3>
+                                <p class="text-sm opacity-90">Shop-cum-Offices & Retail Fit-outs</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Project Management</h3>
+                                <p class="text-sm opacity-90">Supervision & Quality Assurance</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Land Development</h3>
+                                <p class="text-sm opacity-90">Site Preparation & Civil Works</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-auto h-80" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 165, 116, 0.4)), url('https://images.unsplash.com/photo-1567269865882-eea321fda8c9?w=500&h=400&fit=crop'); background-size: cover; background-position: center;">
+                            <div class="carousel-item-content">
+                                <h3 class="font-heading text-2xl font-bold mb-2">Renovations & Fit-outs</h3>
+                                <p class="text-sm opacity-90">Space Redesign & Modern Upgrades</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="py-20 px-4 bg-dark text-white" style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('https://images.unsplash.com/photo-1567269865882-eea321fda8c9?w=1200&fit=crop'); background-size: cover; background-position: center;">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <h2 class="font-display text-4xl font-900 mb-12 text-center text-gradient">Why Choose Jagwati Devi</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 animate-fade-in-up stagger-1">
+                        <h3 class="font-heading text-2xl font-bold mb-3">Local Expertise</h3>
+                        <p class="text-gray-300">Deep-rooted presence in Tughlakabad and South Delhi with understanding of local market and regulations</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 animate-fade-in-up stagger-2">
+                        <h3 class="font-heading text-2xl font-bold mb-3">Quality First</h3>
+                        <p class="text-gray-300">Premium materials, skilled workforce, and rigorous quality checks at every construction stage</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 animate-fade-in-up stagger-3">
+                        <h3 class="font-heading text-2xl font-bold mb-3">Timely Execution</h3>
+                        <p class="text-gray-300">99% on-time delivery track record with efficient resource management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: CONTACT US -->
+    <div id="contact" class="page">
+        <!-- CONTACT HERO -->
+        <section class="pt-32 pb-16 px-4 bg-hero min-h-96 flex items-center" style="background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&fit=crop'); background-size: cover; background-position: center;">
+            <div class="max-w-7xl mx-auto w-full relative z-10">
+                <h1 class="font-display text-5xl md:text-7xl font-900 text-white mb-4 animate-fade-in-up">
+                    Get in <span class="text-gradient">Touch</span>
+                </h1>
+                <p class="font-heading text-xl text-gray-300 max-w-2xl animate-fade-in-up stagger-1">
+                    Let's discuss your construction and real estate needs
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="py-20 px-4 bg-light">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- CONTACT INFO -->
+                    <div>
+                        <h2 class="font-display text-3xl font-900 text-dark mb-8 animate-fade-in-up">Contact Information</h2>
+
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-amber-600 animate-fade-in-up stagger-1">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-3xl text-amber-600">📍</div>
+                                    <div>
+                                        <h3 class="font-heading font-bold text-dark mb-2">Location</h3>
+                                        <p class="text-gray-600">Tughlakabad, South Delhi, India</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-amber-600 animate-fade-in-up stagger-2">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-3xl text-amber-600">📞</div>
+                                    <div>
+                                        <h3 class="font-heading font-bold text-dark mb-2">Phone</h3>
+                                        <p class="text-gray-600">+91 81306 99102</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-amber-600 animate-fade-in-up stagger-3">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-3xl text-amber-600">✉️</div>
+                                    <div>
+                                        <h3 class="font-heading font-bold text-dark mb-2">Email</h3>
+                                        <p class="text-gray-600">info@jagwatidevibuilders.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTACT FORM -->
+                    <div>
+                        <h2 class="font-display text-3xl font-900 text-dark mb-8 animate-fade-in-up stagger-1">Send us a Message</h2>
+                        <form class="space-y-6 animate-fade-in-up stagger-2">
+                            <div class="group">
+                                <label class="font-heading font-semibold text-dark mb-2 block">Full Name</label>
+                                <input type="text" placeholder="Your name" class="w-full px-6 py-4 border-2 border-gray-300 rounded-lg focus:border-amber-600 focus:outline-none transition bg-white/50">
+                            </div>
+
+                            <div class="group">
+                                <label class="font-heading font-semibold text-dark mb-2 block">Email</label>
+                                <input type="email" placeholder="Your email" class="w-full px-6 py-4 border-2 border-gray-300 rounded-lg focus:border-amber-600 focus:outline-none transition bg-white/50">
+                            </div>
+
+                            <div class="group">
+                                <label class="font-heading font-semibold text-dark mb-2 block">Project Type</label>
+                                <select class="w-full px-6 py-4 border-2 border-gray-300 rounded-lg focus:border-amber-600 focus:outline-none transition bg-white/50">
+                                    <option>Select project type</option>
+                                    <option>Residential Construction</option>
+                                    <option>Commercial Development</option>
+                                    <option>Renovation & Fit-outs</option>
+                                    <option>Land Development</option>
+                                </select>
+                            </div>
+
+                            <div class="group">
+                                <label class="font-heading font-semibold text-dark mb-2 block">Message</label>
+                                <textarea placeholder="Your message" rows="6" class="w-full px-6 py-4 border-2 border-gray-300 rounded-lg focus:border-amber-600 focus:outline-none transition bg-white/50 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-lg font-heading font-bold transition transform hover:scale-105 shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-display text-2xl font-900 text-amber-600 mb-4">Jagwati Devi Builders</h3>
+                    <p class="text-gray-400">Premier construction and real estate solutions in South Delhi since 2019</p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" onclick="navigateTo('home')" class="hover:text-amber-600 transition">Home</a></li>
+                        <li><a href="#" onclick="navigateTo('services')" class="hover:text-amber-600 transition">Services</a></li>
+                        <li><a href="#" onclick="navigateTo('contact')" class="hover:text-amber-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Jagwati Devi Builders (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function navigateTo(page) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+            document.getElementById(page).classList.add('active');
+            window.scrollTo(0, 0);
+            document.getElementById('mobile-menu').classList.remove('active');
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
